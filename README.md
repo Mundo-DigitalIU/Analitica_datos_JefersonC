@@ -1,5 +1,4 @@
 # Analitica_datos_JefersonC
-
 paso 1 
 creacion de entorno virtual 
 
