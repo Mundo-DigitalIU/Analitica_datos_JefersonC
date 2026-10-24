@@ -1,0 +1,35 @@
+RESUMEN DE EJECUCIÓN - EVIDENCIA DE APRENDIZAJE 2
+============================================================
+Fecha de ejecución: 2026-10-24 15:13:18
+
+1. URL DE ORIGEN
+  CSV : https://huggingface.co/datasets/scikit-learn/iris/blob/main/Iris.csv
+  JSON: https://huggingface.co/datasets/geekyfreak/json_dump/blob/main/data.json
+
+2. DETALLE POR ARCHIVO
+
+--- ManejadorCSV ---
+Archivo importado: datos_originales/Iris.csv
+Registros importados: 150
+Modificaciones realizadas:
+  - Se actualizaron 50 registros: en la columna 'Species' se cambió 'Iris-setosa' por 'setosa'
+  - Se eliminaron 1 registros donde 'Id' era '150'
+Archivo nuevo guardado: datos_modificados/iris_modificado.csv
+Registros guardados: 149
+
+--- ManejadorJSON ---
+Archivo importado: datos_originales/data.json
+Registros importados: 10
+Modificaciones realizadas:
+  - Se actualizó el registro 0: campo 'category' de '' a 'facturas'
+  - Se agregó 1 registro nuevo al final de la lista
+Archivo nuevo guardado: datos_modificados/data_modificado.json
+Registros guardados: 11
+
+3. CLASES Y MÉTODOS UTILIZADOS
+  ManejadorCSV: importar, actualizar_valor, eliminar_registro, guardar
+  ManejadorJSON: importar, actualizar_valor, agregar_registro, guardar
+  GeneradorResumenTXT: construir_texto, generar_txt
+
+4. REGISTROS PROCESADOS
+  Total de registros importados (CSV + JSON): 160

@@ -1,0 +1,369 @@
+[
+    {
+        "context": " Electronic Funds Transfer Remittance Advice AMN Healthcare 12400 High Bluff Drive San Diego CA 92130 Vendor ID Check Name Payment Number Payment Date D000066 DELLA INFOTECH INC C/O ADV PARTNERS Z0000000001234504 05/03/2023 <<ALIAS~_EDDEBANK~ALIAS>> Mail To: <<DOCTP~EBANK~DOCTP>> DELLA INFOTECH INC C/O ADV PARTNERS 5 INDEPENDENCE WAY SUITE 300 PRINCETON NJ 08540 <<DOCID~Z0000000001234504~DOCID>> <<CMPID~AMN~CMPID>> <<ALSLR~_EDDVendor~*~D000066~ALSLR>> Invoice DateDescription Invoice Number Invoice Amount Amount Paid 04/12/2023 04122023-Ahrens, Chr V-1768916-4024 $1,444.00 $1,444.00 04/14/2023 04142023-Vincent, Ja V-1779337-4024 $1,915.92 $1,915.92 04/14/2023 04142023-Martinez, A V-1777945-4024 $1,913.30 $1,913.30 Totals $5,273.22 $5,273.22 Advice Number REMIT000000000793801 Discount $0.00 $0.00 $0.00 $0.00 Page Net Amount $1,444.00 $1,915.92 $1,913.30 $5,273.22",
+        "output": [
+            {
+                "invoice_number": "V-1768916-4024",
+                "invoice_date": "2023-04-12",
+                "invoice_amount": "1444.00",
+                "client_name": "DELLA INFOTECH INC C/O ADV PARTNERS",
+                "worker_name": "Ahrens, Chr"
+            },
+            {
+                "invoice_number": "V-1779337-4024",
+                "invoice_date": "2023-04-14",
+                "invoice_amount": "1915.92",
+                "client_name": "DELLA INFOTECH INC C/O ADV PARTNERS",
+                "worker_name": "Vincent, Ja"
+            },
+            {
+                "invoice_number": "V-17779-4024",
+                "invoice_date": "2023-04-14",
+                "invoice_amount": "1913.30",
+                "client_name": "DELLA INFOTECH INC C/O ADV PARTNERS",
+                "worker_name": "Masjfkjsdn"
+            }
+        ],
+        "category": "facturas"
+    },
+    {
+        "context": " Hallmark Health Care Solutions 200 Motor Parkway, Suite D-26 Hauppauge, NY 11788 Payment Date: 5/10/2023 Agency Name OrgAgency Invoice  #s Invoice Date Location Mode of Payment Invoice Amount Della InfoTech, Inc. Prime 27178 3/28/2023 SAINT MICHAEL'S MEDICAL CENTER (SMNJ) ACH 2,507.29$  Della InfoTech, Inc. Prime 27499 4/3/2023 SAINT MICHAEL'S MEDICAL CENTER (SMNJ) ACH 779.24$   Della InfoTech, Inc. Prime 21569 12/27/2022 SAINT MICHAEL'S MEDICAL CENTER (SMNJ) ACH 3,268.85$  Total 6,555.38$  Payment Advice ",
+        "output": [
+            {
+                "invoice_number": "27178",
+                "invoice_date": "2023-03-28",
+                "invoice_amount": "2507.29",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "27499",
+                "invoice_date": "2023-04-03",
+                "invoice_amount": "779.24",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "21569",
+                "invoice_date": "2022-12-27",
+                "invoice_amount": "3268.85",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            }
+        ],
+        "category": ""
+    },
+    {
+        "context": " Think as a Field Extractor Expert and Provide the values of the given required fields invoice number, invoice date, invoice amount, client name, worker name and payment mode only from the given text. Return the information in a JSON format as a list of dictionaries. Ensure that each dictionary in the list corresponds to a unique entry in the original data. Do not include unwanted text before or after the JSON. If any information is not available, please enter an empty string (''). 'Client name' may be a 'customer name', 'emblem', 'buyer', 'sender','agency' or 'vendor'. 'Invoice no' and 'client name' should not be \t'null' or ''. 'Candidate_name' and 'client_name' should not be the same. 'Candidate_name' could be like a human or people's name. 'Candidate_name' can't be contained within corporate names like 'medical group', 'infotech' 'inc' etc. If the text has only one data, provide it as a single JSON; there's no need for an empty JSON. Based on required fields, please provide all the dates in the format YYYY-MM-DD. Remove the currency symbols and any commas(,) in amount values. Implement mechanisms to recognize synonymous terms or closely related concepts to the provided queries. For example, if the user requests 'pay date', \tthe system should recognize 'payment date' as a related field. Ensure that the system gracefully handles scenarios where a \trequested field is not found in the document. In such cases, return an empty string ('') for the respective field. Test the system with various documents and user queries to verify its effectiveness in identifying related fields ",
+        "input": " Payment Advice27 September 2023  16:01:30 PM To: Supplier ID: 1000000323 Supplier Name: DELLA INFOTECH INC C/O ADV PARTNERS Location: AV-PSJH Supplier Address: PO BOX 823473 PHILADELPHIA   PA,  19182 USA Payment Information Payment Reference: AP0000008425 Payment Date: 09/27/2023 Payment Method: Automated Clearing House Bank ID Bank Name Bank To Information: 043000096 PNC BANK Bank To Account: ******8695  Payment Details Invoice Number Invoice Date Description Paid Amt V-1814655-4024 09/27/2023 8/5/23-8/6/23:Greinke, Pamela  2,164.10 Total: 2,164.10 USD ",
+        "output": [
+            {
+                "invoice_number": "V-1814655-4024",
+                "invoice_date": "2023-09-27",
+                "invoice_amount": "2164.10",
+                "client_name": "DELLA INFOTECH INC C/O ADV PARTNERS",
+                "worker_name": "Greinke, Pamela",
+                "payment_mode": "Automated Clearing House"
+            }
+        ],
+        "category": ""
+    },
+    {
+        "context": " Think as a Field Extractor Expert and Provide the values of the given required fields invoice number, invoice date, invoice amount, client name, worker name and payment mode only from the given text. Return the information in a JSON format as a list of dictionaries. Ensure that each dictionary in the list corresponds to a unique entry in the original data. Do not include unwanted text before or after the JSON. If any information is not available, please enter an empty string (''). 'Client name' may be a 'customer name', 'emblem', 'buyer', 'sender','agency' or 'vendor'. 'Invoice no' and 'client name' should not be \t'null' or ''. 'Candidate_name' and 'client_name' should not be the same. 'Candidate_name' could be like a human or people's name. 'Candidate_name' can't be contained within corporate names like 'medical group', 'infotech' 'inc' etc. If the text has only one data, provide it as a single JSON; there's no need for an empty JSON. Based on required fields, please provide all the dates in the format YYYY-MM-DD. Remove the currency symbols and any commas(,) in amount values. Implement mechanisms to recognize synonymous terms or closely related concepts to the provided queries. For example, if the user requests 'pay date', \tthe system should recognize 'payment date' as a related field. Ensure that the system gracefully handles scenarios where a \trequested field is not found in the document. In such cases, return an empty string ('') for the respective field. Test the system with various documents and user queries to verify its effectiveness in identifying related fields ",
+        "input": " Payment Advice25 October 2023  16:02:04 PM To: Supplier ID: 1000000323 Supplier Name: DELLA INFOTECH INC C/O ADV PARTNERS Location: AV-PSJH Supplier Address: PO BOX 823473 PHILADELPHIA PA, 19182 USA Payment Information Payment Reference: AP0000011481 Payment Date: 10/25/2023 Payment Method: Automated Clearing House Bank ID Bank Name Bank To Information: 043000096 PNC BANK Bank To Account: ******8695\tPayment Details Invoice Number Invoice Date Description Paid Amt V-1809892-4024 10/25/2023 7/22/23-7/26/23:Greinke, Pamel  2,164.10 V-1812764-4024 10/25/2023 7/28/23-8/2/23:Greinke, Pamela  3,133.10 V-1820346-4024 10/25/2023 7/12/23-7/12/23:Greinke, Pamel  1,082.05 Total: 6,379.25 USD ",
+        "output": [
+            {
+                "invoice_number": "V-1809892-4024",
+                "invoice_date": "2023-10-25",
+                "invoice_amount": "2164.10",
+                "client_name": "DELLA INFOTECH INC C/O ADV PARTNERS",
+                "worker_name": "Greinke, Pamel",
+                "payment_mode": "Automated Clearing House"
+            },
+            {
+                "invoice_number": "V-1812764-4024",
+                "invoice_date": "2023-10-25",
+                "invoice_amount": "3133.10",
+                "client_name": "DELLA INFOTECH INC C/O ADV PARTNERS",
+                "worker_name": "Greinke, Pamela",
+                "payment_mode": "Automated Clearing House"
+            },
+            {
+                "invoice_number": "V-1820346-4024",
+                "invoice_date": "2023-10-25",
+                "invoice_amount": "1082.05",
+                "client_name": "DELLA INFOTECH INC C/O ADV PARTNERS",
+                "worker_name": "Greinke, Pamel",
+                "payment_mode": "Automated Clearing House"
+            }
+        ],
+        "category": ""
+    },
+    {
+        "context": " Think as a Field Extractor Expert and Provide the values of the given required fields invoice number, client_name, invoice date, invoice amount and worker_name only from the given text. Return the information in a JSON format as a list of dictionaries. Ensure that each dictionary in the list corresponds to a unique entry in the original data. Do not include unwanted text before or after the JSON. If any information is not available, please enter an empty string (''). 'Client name' may be a 'customer name', 'emblem', 'buyer', 'sender','agency' or 'vendor'. 'Invoice no' and 'client name' should not be \t'null' or ''. 'Candidate_name' and 'client_name' should not be the same. 'Candidate_name' could be like a human or people's name. 'Candidate_name' can't be contained within corporate names like 'medical group', 'infotech' 'inc' etc. If the text has only one data, provide it as a single JSON; there's no need for an empty JSON. Based on required fields, please provide all the dates in the format YYYY-MM-DD. Remove the currency symbols and any commas(,) in amount values. Implement mechanisms to recognize synonymous terms or closely related concepts to the provided queries. For example, if the user requests 'pay date', \tthe system should recognize 'payment date' as a related field. Ensure that the system gracefully handles scenarios where a \trequested field is not found in the document. In such cases, return an empty string ('') for the respective field. Test the system with various documents and user queries to verify its effectiveness in identifying related fields ",
+        "input": " Chart Industries Remittance Advice Payee: DELLA INFOTECH INC 5 INDEPENDENCE WAY SUITE 300 PRINCETON NJ  08540 Invoice # Reference Gross Amount Discount Amount Payment Amt Invoice Date1 of 1 2218410 05/04/23 364510Page No. Advice No. Advice Date: Address Number: 31429 09/09/22 Labisi ­ Temp Labor 2,976.00 2,976.00 31430 09/09/22 Labisi ­ Temp Labor 3,720.00 3,720.00 31431 09/09/22 Labisi ­ Temp Labor 1,674.00 1,674.00 31432 09/09/22 Labisi ­ Temp Labor 3,720.00 3,720.00 31435 09/09/22 Labisi ­ Temp Labor 3,999.00 3,999.00 31436 09/09/22 Labisi ­ Temp Labor 3,348.00 3,348.00 34928 11/07/22 Labisi ­ Temp Labor 3,441.00 3,441.00 34929 11/07/22 Labisi ­Temp Labor 3,720.00 3,720.00 Totals: 26,598.00 26,598.00 USD For Any Questions Please Contact: corpaccountspayable@chartindustries.com ",
+        "output": [
+            {
+                "invoice_number": "31429",
+                "invoice_date": "2022-09-09",
+                "invoice_amount": "2976.00",
+                "client_name": "DELLA INFOTECH INC",
+                "worker_name": "Labisi"
+            },
+            {
+                "invoice_number": "31430",
+                "invoice_date": "2022-09-09",
+                "invoice_amount": "3720.00",
+                "client_name": "DELLA INFOTECH INC",
+                "worker_name": "Labisi"
+            },
+            {
+                "invoice_number": "31431",
+                "invoice_date": "2022-09-09",
+                "invoice_amount": "1674.00",
+                "client_name": "DELLA INFOTECH INC",
+                "worker_name": "Labisi"
+            },
+            {
+                "invoice_number": "31432",
+                "invoice_date": "2022-09-09",
+                "invoice_amount": "3720.00",
+                "client_name": "DELLA INFOTECH INC",
+                "worker_name": "Labisi"
+            },
+            {
+                "invoice_number": "31435",
+                "invoice_date": "2022-09-09",
+                "invoice_amount": "3999.00",
+                "client_name": "DELLA INFOTECH INC",
+                "worker_name": "Labisi"
+            },
+            {
+                "invoice_number": "31436",
+                "invoice_date": "2022-09-09",
+                "invoice_amount": "3348.00",
+                "client_name": "DELLA INFOTECH INC",
+                "worker_name": "Labisi"
+            },
+            {
+                "invoice_number": "34928",
+                "invoice_date": "2022-11-07",
+                "invoice_amount": "3441.00",
+                "client_name": "DELLA INFOTECH INC",
+                "worker_name": "Labisi"
+            },
+            {
+                "invoice_number": "34929",
+                "invoice_date": "2022-11-07",
+                "invoice_amount": "3720.00",
+                "client_name": "DELLA INFOTECH INC",
+                "worker_name": "Labisi"
+            }
+        ],
+        "category": ""
+    },
+    {
+        "context": " Think as a Field Extractor Expert and Provide the values of the given required fields invoice number, invoice date, invoice amount, worker_name, client_name and payment mode only from the given text. Return the information in a JSON format as a list of dictionaries. Ensure that each dictionary in the list corresponds to a unique entry in the original data. Do not include unwanted text before or after the JSON. If any information is not available, please enter an empty string (''). 'Client name' may be a 'customer name', 'emblem', 'buyer', 'sender','agency' or 'vendor'. 'Invoice no' and 'client name' should not be \t'null' or ''. 'Candidate_name' and 'client_name' should not be the same. 'Candidate_name' could be like a human or people's name. 'Candidate_name' can't be contained within corporate names like 'medical group', 'infotech' 'inc' etc. If the text has only one data, provide it as a single JSON; there's no need for an empty JSON. Based on required fields, please provide all the dates in the format YYYY-MM-DD. Remove the currency symbols and any commas(,) in amount values. Implement mechanisms to recognize synonymous terms or closely related concepts to the provided queries. For example, if the user requests 'pay date', \tthe system should recognize 'payment date' as a related field. Ensure that the system gracefully handles scenarios where a \trequested field is not found in the document. In such cases, return an empty string ('') for the respective field. Test the system with various documents and user queries to verify its effectiveness in identifying related fields ",
+        "input": " PAYMENT NOTIFICATION If you have any questions please contact us at:-  North America: fsc_supplierrelations@cargill.com or 1-800-513-1098  Europe: apuk_helpdesk@cargill.com.  Australia:cmap_apinvoice@cargill.com or +61-8-8214-6751  Trade Settlements: Please refer any questions to your local site contact.  This document is for reference and information, and does not itself constitute the contract.  The underlying contract governs the transaction between the parties.Page 1 of 1Vendor DELLA INFOTECH INC: Tax ID :  Contact :  Fax :  Date Jul 28, 2023:  Address#5 INDEPENDENCE WAY PRINCETON NJ USA 08540: Vendor Payee # 8000083591: Payment Method LOCAL ELECTRONIC PAYMENT: Account Number xxxxxx8695:  Payment Amount 1552.00 USD:  Payment Document 2000130081: Withholding Tax Total Amount 0: Company Code 1001: Name Cargill Inc: AddressMCGINTY ROAD WEST WAYZATA USA  55391:  Tax ID : Cargill Invoice #Vendor Reference #Purchase Order #Purchase LocationInvoice AmountDiscount AmountTax AmountNet Amount 5200033692 43473 60000355853BBS WAYZATA  MN US HEAD OFFICE WAYZATA MN USA1,552 0 0 1,552 ",
+        "output": [
+            {
+                "invoice_number": "5200033692",
+                "invoice_date": "2023-07-28",
+                "invoice_amount": "1552.00",
+                "client_name": "DELLA INFOTECH INC",
+                "payment_mode": "LOCAL ELECTRONIC PAYMENT",
+                "worker_name": "Cargill Inc"
+            }
+        ],
+        "category": ""
+    },
+    {
+        "context": " Think as a Field Extractor Expert and Provide the values of the given required fields invoice number, invoice date, invoice amount, worker_name, client_name and payment mode only from the given text. Return the information in a JSON format as a list of dictionaries. Ensure that each dictionary in the list corresponds to a unique entry in the original data. Do not include unwanted text before or after the JSON. If any information is not available, please enter an empty string (''). 'Client name' may be a 'customer name', 'emblem', 'buyer', 'sender','agency' or 'vendor'. 'Invoice no' and 'client name' should not be \t'null' or ''. 'Candidate_name' and 'client_name' should not be the same. 'Candidate_name' could be like a human or people's name. 'Candidate_name' can't be contained within corporate names like 'medical group', 'infotech' 'inc' etc. If the text has only one data, provide it as a single JSON; there's no need for an empty JSON. Based on required fields, please provide all the dates in the format YYYY-MM-DD. Remove the currency symbols and any commas(,) in amount values. Implement mechanisms to recognize synonymous terms or closely related concepts to the provided queries. For example, if the user requests 'pay date', \tthe system should recognize 'payment date' as a related field. Ensure that the system gracefully handles scenarios where a \trequested field is not found in the document. In such cases, return an empty string ('') for the respective field. Test the system with various documents and user queries to verify its effectiveness in identifying related fields ",
+        "input": " PAYMENT NOTIFICATION If you have any questions please contact us at:- North America: fsc_supplierrelations@cargill.com or 1-800-513-1098 Europe: apuk_helpdesk@cargill.com. Australia:cmap_apinvoice@cargill.com or +61-8-8214-6751 Trade Settlements: Please refer any questions to your local site contact. This document is for reference and information, and does not itself constitute the contract. The underlying contract governs the transaction between the parties.Page 1 of 1Vendor DELLA INFOTECH INC: Tax ID : Contact : Fax : Date Sep 29, 2023: Address#5 INDEPENDENCE WAY PRINCETON NJ USA 08540: Vendor Payee # 8000083591: Payment Method LOCAL ELECTRONIC PAYMENT: Account Number xxxxxx8695: Payment Amount 562.60 USD:Payment Document 2000139649: Withholding Tax Total Amount 0: Company Code 1001: Name Cargill Inc: AddressMCGINTY ROAD WEST WAYZATA USA 55391: Tax ID :Cargill Invoice #Vendor Reference #Purchase Order #Purchase LocationInvoice AmountDiscount AmountTax AmountNet  Amount 5200081912 45310 60000355853BBS WAYZATA MN US HEAD  OFFICE WAYZATA MN USA562.6 0 0 562.6 ",
+        "output": [
+            {
+                "invoice_number": "5200081912",
+                "invoice_date": "2023-09-29",
+                "invoice_amount": "526.60",
+                "client_name": "DELLA INFOTECH INC",
+                "payment_mode": "LOCAL ELECTRONIC PAYMENT",
+                "worker_name": "Cargill Inc"
+            }
+        ],
+        "category": ""
+    },
+    {
+        "context": " Think as a Field Extractor Expert and Provide the values of the given required fields invoice number, invoice date, invoice amount, worker_name, client_name and payment mode only from the given text. Return the information in a JSON format as a list of dictionaries. Ensure that each dictionary in the list corresponds to a unique entry in the original data. Do not include unwanted text before or after the JSON. If any information is not available, please enter an empty string (''). 'Client name' may be a 'customer name', 'emblem', 'buyer', 'sender','agency' or 'vendor'. 'Invoice no' and 'client name' should not be \t'null' or ''. 'Candidate_name' and 'client_name' should not be the same. 'Candidate_name' could be like a human or people's name. 'Candidate_name' can't be contained within corporate names like 'medical group', 'infotech' 'inc' etc. If the text has only one data, provide it as a single JSON; there's no need for an empty JSON. Based on required fields, please provide all the dates in the format YYYY-MM-DD. Remove the currency symbols and any commas(,) in amount values. Implement mechanisms to recognize synonymous terms or closely related concepts to the provided queries. For example, if the user requests 'pay date', \tthe system should recognize 'payment date' as a related field. Ensure that the system gracefully handles scenarios where a \trequested field is not found in the document. In such cases, return an empty string ('') for the respective field. Test the system with various documents and user queries to verify its effectiveness in identifying related fields ",
+        "input": " Company Code :1001 Name :CGL INC Address :MCGINTY ROAD WEST 15407 Tax ID # :410177680 Vendor Ref # / SES Ref # Invoice Amount Discount Amount Tax Rate Tax Amount  Net Amount 43478/43478 849.56 0.00 0.00                   0.00 849.56 Cargill Invoice # Purchase Order # Purchase Location 5207693389  4513443361 1CAJ, CHARLOTTE , NC, USA Vendor Ref # / SES Ref # Invoice Amount  Discount Amount Tax Rate Tax Amount  Net Amount 43475/43475           1,383.26  0.00  0.00 0.00 1,383.26 Cargill Invoice # Purchase Order # Purchase Location 5207693392 4513443361 1CAJ, CHARLOTTE , NC, USA  If you have any questions please contact us at:- North America: fsc_supplierrelations@cargill.com or 1-800-513-1098 Europe: apuk_helpdesk@cargill.com. Australia:cmap_apinvoice@cargill.com or +61-8-8214-6751 Trade Settlements: Please refer any questions to your local site contact. \t\tThis document is for reference and information, and does not itself constitute the contract. The underlying contract governs the transaction between the parties. Page 1 of 1 Vendor Payee # :8000083591 Payment Method :LOCAL ELECTRONIC PAYMENT Account Number :xxxxxxxxxxxxxx8695 Payment Amount : 2,232.82 USD Payment Document :2003692891 Withholding Tax Total Amount : 0.00PAYMENT NOTIFICATION Vendor :Della infotech inc Tax ID # : Contact : Fax # :Date :08/08/2023 Address :#5 independence way PRINCETON NJ  08540 USA ",
+        "output": [
+            {
+                "invoice_number": "5207693389",
+                "invoice_date": "2023-08-08",
+                "invoice_amount": "849.56",
+                "client_name": "Della infotech inc",
+                "payment_mode": "LOCAL ELECTRONIC PAYMENT",
+                "worker_name": "CGL INC"
+            },
+            {
+                "invoice_number": "5207693392",
+                "invoice_date": "2023-08-08",
+                "invoice_amount": "1383.26",
+                "client_name": "Della infotech inc",
+                "payment_mode": "LOCAL ELECTRONIC PAYMENT",
+                "worker_name": "CGL INC"
+            }
+        ],
+        "category": ""
+    },
+    {
+        "context": " Think as a Field Extractor Expert and Provide the values of the given required fields invoice number, invoice date, invoice amount, worker_name and client_name only from the given text. Return the information in a JSON format as a list of dictionaries. Ensure that each dictionary in the list corresponds to a unique entry in the original data. Do not include unwanted text before or after the JSON. If any information is not available, please enter an empty string (''). 'Client name' may be a 'customer name', 'emblem', 'buyer', 'sender','agency' or 'vendor'. 'Invoice no' and 'client name' should not be \t'null' or ''. 'Candidate_name' and 'client_name' should not be the same. 'Candidate_name' could be like a human or people's name. 'Candidate_name' can't be contained within corporate names like 'medical group', 'infotech' 'inc' etc. If the text has only one data, provide it as a single JSON; there's no need for an empty JSON. Based on required fields, please provide all the dates in the format YYYY-MM-DD. Remove the currency symbols and any commas(,) in amount values. Implement mechanisms to recognize synonymous terms or closely related concepts to the provided queries. For example, if the user requests 'pay date', \tthe system should recognize 'payment date' as a related field. Ensure that the system gracefully handles scenarios where a \trequested field is not found in the document. In such cases, return an empty string ('') for the respective field. Test the system with various documents and user queries to verify its effectiveness in identifying related fields ",
+        "input": " Broadleaf Results, Inc. 250 International Drive WILLIAMSVILLE NY  14221 USA Della Infotech Inc. 315 Lowell Ave HAMILTON NJ  08619-2544 USA PAYMENT ADVICE Page:  1 / 1 Document:  2000471041 Date: 10/16/2023 Your account with us  4003828 Description W/E DateWN InvoiceAmountACADiscountTaxPaid Amount Louis Barberena 09/17/2023 ITE0020782 1,892.03 0.00 -9.46 0.00 1,882.57 Miosha Cross 09/17/2023 ITE0020785 870.80 0.00 -4.35 0.00 866.45 Austin Ruddell 09/17/2023 ITE0020789 1,623.60 0.00 -8.12 0.00 1,615.48 John Mosley 09/17/2023 ITE0020879 1,094.00 0.00 -5.47 0.00 1,088.53 Michael Rios 09/17/2023 ITE0020882 420.60 0.00 -2.10 0.00 418.50 Austin Ruddell 09/10/2023 ITE0020883 1,298.88 0.00 -6.49 0.00 1,292.39 Donald Jeter 09/17/2023 ITE0020901 887.18 0.00 -4.44 0.00 882.74 Total Sum 8,046.66 Payment Document 2000471041Date 10/16/2023Currency USDPayment Amount 8,046.66 ",
+        "output": [
+            {
+                "invoice_number": "ITE0020782",
+                "invoice_date": "2023-09-17",
+                "invoice_amount": "1882.57",
+                "client_name": "Della Infotech Inc",
+                "worker_name": "Louis Barberena"
+            },
+            {
+                "invoice_number": "ITE0020785",
+                "invoice_date": "2023-09-17",
+                "invoice_amount": "866.45",
+                "client_name": "Della infotech inc",
+                "worker_name": "Miosha Cross"
+            },
+            {
+                "invoice_number": "ITE0020789",
+                "invoice_date": "2023-09-17",
+                "invoice_amount": "1615.48",
+                "client_name": "Della infotech inc",
+                "worker_name": "Austin Ruddell"
+            },
+            {
+                "invoice_number": "ITE0020879",
+                "invoice_date": "2023-09-17",
+                "invoice_amount": "1088.53",
+                "client_name": "Della infotech inc",
+                "worker_name": "John Mosley"
+            },
+            {
+                "invoice_number": "ITE0020882",
+                "invoice_date": "2023-09-17",
+                "invoice_amount": "418.50",
+                "client_name": "Della infotech inc",
+                "worker_name": "Michael Rios"
+            },
+            {
+                "invoice_number": "ITE0020883",
+                "invoice_date": "2023-09-10",
+                "invoice_amount": "1292.29",
+                "client_name": "Della infotech inc",
+                "worker_name": "Austin Ruddell"
+            },
+            {
+                "invoice_number": "ITE0020901",
+                "invoice_date": "2023-09-17",
+                "invoice_amount": "882.74",
+                "client_name": "Della infotech inc",
+                "worker_name": "Donald Jeter"
+            }
+        ]
+    },
+    {
+        "context": " Think as a Field Extractor Expert and Provide the values of the given required fields invoice number, invoice date, invoice amount, worker name and client name only from the given text. Return the information in a JSON format as a list of dictionaries. Ensure that each dictionary in the list corresponds to a unique entry in the original data. Do not include unwanted text before or after the JSON. If any information is not available, please enter an empty string (''). 'Client name' may be a 'customer name', 'emblem', 'buyer', 'sender','agency' or 'vendor'. 'Invoice no' and 'client name' should not be \t'null' or ''. 'Candidate_name' and 'client_name' should not be the same. 'Candidate_name' could be like a human or people's name. 'Candidate_name' can't be contained within corporate names like 'medical group', 'infotech' 'inc' etc. If the text has only one data, provide it as a single JSON; there's no need for an empty JSON. Based on required fields, please provide all the dates in the format YYYY-MM-DD. Remove the currency symbols and any commas(,) in amount values. Implement mechanisms to recognize synonymous terms or closely related concepts to the provided queries. For example, if the user requests 'pay date', \tthe system should recognize 'payment date' as a related field. Ensure that the system gracefully handles scenarios where a \trequested field is not found in the document. In such cases, return an empty string ('') for the respective field. Test the system with various documents and user queries to verify its effectiveness in identifying related fields ",
+        "input": " Hallmark Health Care Solutions 200 Motor Parkway, Suite D-26 Hauppauge, NY 11788 Payment Date: 9/28/2023 Agency Name OrgAgency Invoice #s Invoice Date LocationMode of PaymentInvoice Amount Della InfoTech, Inc. Ascension ASC-3977-1 9/6/2023 ILARL St Mary of Nazareth Hosp-66514 ACH 3,767.48$ Della InfoTech, Inc. Ascension ASC-4056-14 9/8/2023 MIDET Ascen Provid Hosp Sthfld-34014 ACH 2,485.18$  Della InfoTech, Inc. Ascension ASC-4073-13 9/8/2023 ININD St Vincent Indpls Acute-46029 ACH 2,096.70$  Della InfoTech, Inc. MGB MGB-492-17 7/21/2023 Salem Hospital(NSMC) ACH 1,900.00$  Della InfoTech, Inc. MGB MGB-544-12 8/11/2023 Salem Hospital(NSMC) ACH 5,135.65$ Della InfoTech, Inc. Prime 34695 8/25/2023 SAINT MICHAEL'S MEDICAL CENTER (SMNJ) ACH (8,428.03)$ Della InfoTech, Inc. Trinity 137116 8/24/2023 St. Mary Medical Center ACH 2,763.36$  Della InfoTech, Inc. Trinity 137161 8/24/2023 Holy Cross Hospital_MD ACH 2,523.44$ Della InfoTech, Inc. Trinity 137173 8/24/2023 Holy Cross Hospital_MD ACH 3,132.15$ Della InfoTech, Inc. Trinity 137259 8/24/2023 Mount Carmel Grove City ACH 1,337.60$ Della InfoTech, Inc. Trinity 137282 8/24/2023 Mount Carmel East ACH 1,803.10$ Della InfoTech, Inc. Trinity 137453 8/24/2023 Detroit Primary Care Center ACH 1,256.85$ Total 19,773.48$ Payment Advice ",
+        "output": [
+            {
+                "invoice_number": "ASC-3977-1",
+                "invoice_date": "2023-09-06",
+                "invoice_amount": "3767.48",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "ASC-4056-14",
+                "invoice_date": "2023-09-08",
+                "invoice_amount": "2485.18",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "ASC-4073-13",
+                "invoice_date": "2023-09-08",
+                "invoice_amount": "2096.70",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "MGB-492-17",
+                "invoice_date": "2023-07-21",
+                "invoice_amount": "1900.00",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "MGB-544-12",
+                "invoice_date": "2023-08-11",
+                "invoice_amount": "5135.65",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "34695",
+                "invoice_date": "2023-08-25",
+                "invoice_amount": "8428.03",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "137116",
+                "invoice_date": "2023-08-24",
+                "invoice_amount": "2763.36",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "137161",
+                "invoice_date": "2023-08-24",
+                "invoice_amount": "2523.44",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "137173",
+                "invoice_date": "2023-08-24",
+                "invoice_amount": "3132.15",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "137259",
+                "invoice_date": "2023-08-24",
+                "invoice_amount": "1337.60",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "137282",
+                "invoice_date": "2023-08-24",
+                "invoice_amount": "1803.10",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            },
+            {
+                "invoice_number": "137453",
+                "invoice_date": "2023-08-24",
+                "invoice_amount": "1256.85",
+                "client_name": "Della InfoTech, Inc.",
+                "payment_mode": "ACH"
+            }
+        ],
+        "category": ""
+    },
+    {
+        "context": "Registro agregado desde Jupyter",
+        "output": [],
+        "category": "nuevo"
+    }
+]
