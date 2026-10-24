@@ -7,3 +7,7 @@ Terminales:
 verificacion de versiones:
 python -m venv .venv
  
+ paso activar entorno #2 
+ source .venv/bin/activate
+
+ 
