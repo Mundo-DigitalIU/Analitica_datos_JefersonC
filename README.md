@@ -40,3 +40,4 @@ pip install -r requirements.txt
 ## Paso 4: ejecutar el flujo
 Abro `src/clases_po/flujo_principal.ipynb`, selecciono el kernel `.venv` y uso **Ejecutar todo**. Al terminar se genera el archivo `resumen_iris_transformado.txt`.
  
+ 
